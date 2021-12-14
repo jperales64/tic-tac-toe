@@ -23,6 +23,8 @@ const gameBoard = (() => {
                 gameBoard[i][j] = null;
             }
         }
+        displayController.displayBoard();
+        gameController.reset();
     });
 
     const getGameBoard = () => gameBoard;
@@ -33,7 +35,6 @@ const gameBoard = (() => {
                 if (gameBoard[i][j] == null) {
                     return false;
                 }
-
             }
         }
         return true;
@@ -76,8 +77,6 @@ const displayController = (() => {
                         if (gameBoard.checkTie()) {
                             alert("tie");
                             gameBoard.clearGameBoard();
-                            displayController.displayBoard();
-                            gameController.reset();
                             break;
                         }
                         gameController.switchCurrentPlayer();
@@ -92,8 +91,7 @@ const displayController = (() => {
                         if (gameBoard.checkTie()) {
                             alert("tie");
                             gameBoard.clearGameBoard();
-                            displayController.displayBoard();
-                            gameController.reset();
+
                             break;
                         }
                         gameController.switchCurrentPlayer();
@@ -109,8 +107,7 @@ const displayController = (() => {
                         if (gameBoard.checkTie()) {
                             alert("tie");
                             gameBoard.clearGameBoard();
-                            displayController.displayBoard();
-                            gameController.reset();
+
                             break;
                         }
                         gameController.switchCurrentPlayer();
@@ -126,8 +123,7 @@ const displayController = (() => {
                         if (gameBoard.checkTie()) {
                             alert("tie");
                             gameBoard.clearGameBoard();
-                            displayController.displayBoard();
-                            gameController.reset();
+
                             break;
                         }
                         gameController.switchCurrentPlayer();
@@ -143,8 +139,7 @@ const displayController = (() => {
                         if (gameBoard.checkTie()) {
                             alert("tie");
                             gameBoard.clearGameBoard();
-                            displayController.displayBoard();
-                            gameController.reset();
+
                             break;
                         }
                         gameController.switchCurrentPlayer();
@@ -160,8 +155,7 @@ const displayController = (() => {
                         if (gameBoard.checkTie()) {
                             alert("tie");
                             gameBoard.clearGameBoard();
-                            displayController.displayBoard();
-                            gameController.reset();
+
                             break;
                         }
                         gameController.switchCurrentPlayer();
@@ -177,8 +171,7 @@ const displayController = (() => {
                         if (gameBoard.checkTie()) {
                             alert("tie");
                             gameBoard.clearGameBoard();
-                            displayController.displayBoard();
-                            gameController.reset();
+
                             break;
                         }
                         gameController.switchCurrentPlayer();
@@ -194,8 +187,7 @@ const displayController = (() => {
                         if (gameBoard.checkTie()) {
                             alert("tie");
                             gameBoard.clearGameBoard();
-                            displayController.displayBoard();
-                            gameController.reset();
+
                             break;
                         }
                         gameController.switchCurrentPlayer();
@@ -211,8 +203,7 @@ const displayController = (() => {
                         if (gameBoard.checkTie()) {
                             alert("tie");
                             gameBoard.clearGameBoard();
-                            displayController.displayBoard();
-                            gameController.reset();
+
                             break;
                         }
 
@@ -264,8 +255,7 @@ const gameController = (() => {
                     (theGameBoard[1][1] == getCurrentPlayer() && theGameBoard[2][2] == getCurrentPlayer())) {
                     alert(`The winner is ${getCurrentPlayer()}`);
                     gameBoard.clearGameBoard();
-                    displayController.displayBoard();
-                    reset();
+
                     return true;
                 }
                 break;
@@ -274,8 +264,7 @@ const gameController = (() => {
                     (theGameBoard[1][1] == getCurrentPlayer() && theGameBoard[2][1] == getCurrentPlayer())) {
                     alert(`The winner is ${getCurrentPlayer()}`);
                     gameBoard.clearGameBoard();
-                    displayController.displayBoard();
-                    reset();
+
                     return true;
                 }
                 break;
@@ -286,8 +275,7 @@ const gameController = (() => {
                     (theGameBoard[1][1] == getCurrentPlayer() && theGameBoard[2][0] == getCurrentPlayer())) {
                     alert(`The winner is ${getCurrentPlayer()}`);
                     gameBoard.clearGameBoard();
-                    displayController.displayBoard();
-                    reset();
+
                     return true;
                 }
                 break;
@@ -297,19 +285,19 @@ const gameController = (() => {
                     (theGameBoard[1][1] == getCurrentPlayer() && theGameBoard[1][2] == getCurrentPlayer())) {
                     alert(`The winner is ${getCurrentPlayer()}`);
                     gameBoard.clearGameBoard();
-                    displayController.displayBoard();
-                    reset();
+
                     return true;
                 }
                 break;
 
             case 4:
                 if ((theGameBoard[0][1] == getCurrentPlayer() && theGameBoard[2][1] == getCurrentPlayer()) ||
-                    (theGameBoard[1][0] == getCurrentPlayer() && theGameBoard[1][2] == getCurrentPlayer())) {
+                    (theGameBoard[1][0] == getCurrentPlayer() && theGameBoard[1][2] == getCurrentPlayer()) ||
+                    (theGameBoard[2][0] == getCurrentPlayer() && theGameBoard[0][2] == getCurrentPlayer()) ||
+                    (theGameBoard[0][0] == getCurrentPlayer() && theGameBoard[2][2] == getCurrentPlayer())) {
                     alert(`The winner is ${getCurrentPlayer()}`);
                     gameBoard.clearGameBoard();
-                    displayController.displayBoard();
-                    reset();
+
                     return true;
                 }
                 break;
@@ -319,8 +307,7 @@ const gameController = (() => {
                     (theGameBoard[1][0] == getCurrentPlayer() && theGameBoard[1][1] == getCurrentPlayer())) {
                     alert(`The winner is ${getCurrentPlayer()}`);
                     gameBoard.clearGameBoard();
-                    displayController.displayBoard();
-                    reset();
+
                     return true;
                 }
                 break;
@@ -331,8 +318,7 @@ const gameController = (() => {
                     (theGameBoard[1][1] == getCurrentPlayer() && theGameBoard[0][2] == getCurrentPlayer())) {
                     alert(`The winner is ${getCurrentPlayer()}`);
                     gameBoard.clearGameBoard();
-                    displayController.displayBoard();
-                    reset();
+
                     return true;
                 }
                 break;
@@ -342,8 +328,7 @@ const gameController = (() => {
                     (theGameBoard[2][0] == getCurrentPlayer() && theGameBoard[2][2] == getCurrentPlayer())) {
                     alert(`The winner is ${getCurrentPlayer()}`);
                     gameBoard.clearGameBoard();
-                    displayController.displayBoard();
-                    reset();
+
                     return true;
                 }
                 break;
@@ -354,8 +339,7 @@ const gameController = (() => {
                     (theGameBoard[0][0] == getCurrentPlayer() && theGameBoard[1][1] == getCurrentPlayer())) {
                     alert(`The winner is ${getCurrentPlayer()}`);
                     gameBoard.clearGameBoard();
-                    displayController.displayBoard();
-                    reset();
+
                     return true;
                 }
                 break;
