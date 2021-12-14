@@ -3,19 +3,17 @@
     padding: 0;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
-
 header {
     text-align: center;
+    padding: 10px;
+    font-size: 15vh;
 }
 
 .board-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50vh;
 }
 
 .game-board {
@@ -34,8 +32,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 15vh;
+    height: 15vh;
+    font-size: 7.5vh;
 }
 
 .top-row {
